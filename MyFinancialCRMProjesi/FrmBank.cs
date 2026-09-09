@@ -46,5 +46,12 @@ namespace MyFinancialCRMProjesi
 			
 			
 		}
+
+		private void btnBillingForm_Click(object sender, EventArgs e)
+		{
+			FrmBilling frm=new FrmBilling();
+			frm.Show();
+			this.Hide();
+		}
 	}
 }

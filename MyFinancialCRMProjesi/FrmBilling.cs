@@ -81,5 +81,12 @@ namespace MyFinancialCRMProjesi
 			dataGridView1.DataSource = values;
 
 		}
+
+		private void btnBanks_Click(object sender, EventArgs e)
+		{
+			FrmBank frm = new FrmBank();
+			frm.Show();
+			this.Hide();
+		}
 	}
 }
