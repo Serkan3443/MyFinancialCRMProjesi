@@ -16,7 +16,7 @@ namespace MyFinancialCRMProjesi
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FrmBank());
+			Application.Run(new FrmBilling());
 		}
 	}
 }

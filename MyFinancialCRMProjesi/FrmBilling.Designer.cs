@@ -40,12 +40,12 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtBillingId = new System.Windows.Forms.TextBox();
+			this.txtBillingTitle = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.txtBillingAmout = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.txtBillingPeriot = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.btnListBilling = new System.Windows.Forms.Button();
@@ -181,13 +181,13 @@
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.MediumAquamarine;
-			this.panel2.Controls.Add(this.textBox4);
+			this.panel2.Controls.Add(this.txtBillingPeriot);
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.textBox3);
+			this.panel2.Controls.Add(this.txtBillingAmout);
 			this.panel2.Controls.Add(this.label3);
-			this.panel2.Controls.Add(this.textBox2);
+			this.panel2.Controls.Add(this.txtBillingTitle);
 			this.panel2.Controls.Add(this.label2);
-			this.panel2.Controls.Add(this.textBox1);
+			this.panel2.Controls.Add(this.txtBillingId);
 			this.panel2.Controls.Add(this.label1);
 			this.panel2.Controls.Add(this.btnUpdateBilling);
 			this.panel2.Controls.Add(this.btnDeleteBilling);
@@ -218,21 +218,21 @@
 			this.label1.TabIndex = 3;
 			this.label1.Text = "Ödeme Id:";
 			// 
-			// textBox1
+			// txtBillingId
 			// 
-			this.textBox1.Location = new System.Drawing.Point(89, 18);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(570, 24);
-			this.textBox1.TabIndex = 4;
+			this.txtBillingId.Location = new System.Drawing.Point(89, 18);
+			this.txtBillingId.Multiline = true;
+			this.txtBillingId.Name = "txtBillingId";
+			this.txtBillingId.Size = new System.Drawing.Size(570, 24);
+			this.txtBillingId.TabIndex = 4;
 			// 
-			// textBox2
+			// txtBillingTitle
 			// 
-			this.textBox2.Location = new System.Drawing.Point(89, 55);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(570, 24);
-			this.textBox2.TabIndex = 6;
+			this.txtBillingTitle.Location = new System.Drawing.Point(89, 55);
+			this.txtBillingTitle.Multiline = true;
+			this.txtBillingTitle.Name = "txtBillingTitle";
+			this.txtBillingTitle.Size = new System.Drawing.Size(570, 24);
+			this.txtBillingTitle.TabIndex = 6;
 			// 
 			// label2
 			// 
@@ -245,13 +245,13 @@
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Başlık:";
 			// 
-			// textBox3
+			// txtBillingAmout
 			// 
-			this.textBox3.Location = new System.Drawing.Point(89, 92);
-			this.textBox3.Multiline = true;
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(570, 24);
-			this.textBox3.TabIndex = 8;
+			this.txtBillingAmout.Location = new System.Drawing.Point(89, 92);
+			this.txtBillingAmout.Multiline = true;
+			this.txtBillingAmout.Name = "txtBillingAmout";
+			this.txtBillingAmout.Size = new System.Drawing.Size(570, 24);
+			this.txtBillingAmout.TabIndex = 8;
 			// 
 			// label3
 			// 
@@ -264,13 +264,13 @@
 			this.label3.TabIndex = 7;
 			this.label3.Text = "Miktar:";
 			// 
-			// textBox4
+			// txtBillingPeriot
 			// 
-			this.textBox4.Location = new System.Drawing.Point(89, 129);
-			this.textBox4.Multiline = true;
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(570, 24);
-			this.textBox4.TabIndex = 10;
+			this.txtBillingPeriot.Location = new System.Drawing.Point(89, 129);
+			this.txtBillingPeriot.Multiline = true;
+			this.txtBillingPeriot.Name = "txtBillingPeriot";
+			this.txtBillingPeriot.Size = new System.Drawing.Size(570, 24);
+			this.txtBillingPeriot.TabIndex = 10;
 			// 
 			// label4
 			// 
@@ -305,6 +305,7 @@
 			this.btnListBilling.TabIndex = 11;
 			this.btnListBilling.Text = "Ödeme Listesi";
 			this.btnListBilling.UseVisualStyleBackColor = false;
+			this.btnListBilling.Click += new System.EventHandler(this.btnListBilling_Click);
 			// 
 			// btnNewBilling
 			// 
@@ -318,6 +319,7 @@
 			this.btnNewBilling.TabIndex = 12;
 			this.btnNewBilling.Text = "Yeni Ödeme";
 			this.btnNewBilling.UseVisualStyleBackColor = false;
+			this.btnNewBilling.Click += new System.EventHandler(this.btnNewBilling_Click);
 			// 
 			// btnDeleteBilling
 			// 
@@ -331,6 +333,7 @@
 			this.btnDeleteBilling.TabIndex = 13;
 			this.btnDeleteBilling.Text = "Ödeme Sil";
 			this.btnDeleteBilling.UseVisualStyleBackColor = false;
+			this.btnDeleteBilling.Click += new System.EventHandler(this.btnDeleteBilling_Click);
 			// 
 			// btnUpdateBilling
 			// 
@@ -344,6 +347,7 @@
 			this.btnUpdateBilling.TabIndex = 14;
 			this.btnUpdateBilling.Text = "Ödeme Güncelle";
 			this.btnUpdateBilling.UseVisualStyleBackColor = false;
+			this.btnUpdateBilling.Click += new System.EventHandler(this.btnUpdateBilling_Click);
 			// 
 			// FrmBilling
 			// 
@@ -355,7 +359,9 @@
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "FrmBilling";
-			this.Text = "FrmBilling";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Ödeme Fatura Sayfası";
+			this.Load += new System.EventHandler(this.FrmBilling_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
@@ -379,12 +385,12 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.TextBox txtBillingId;
+		private System.Windows.Forms.TextBox txtBillingPeriot;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox txtBillingAmout;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtBillingTitle;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button btnUpdateBilling;
