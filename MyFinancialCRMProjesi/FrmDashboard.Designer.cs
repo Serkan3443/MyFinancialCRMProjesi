@@ -29,6 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.lblBankProcessAmout = new System.Windows.Forms.Label();
 			this.lblVakif = new System.Windows.Forms.Label();
@@ -50,11 +56,21 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.panel5.SuspendLayout();
 			this.panel4.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+			this.flowLayoutPanel1.SuspendLayout();
+			this.flowLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel5
@@ -62,9 +78,9 @@
 			this.panel5.BackColor = System.Drawing.Color.Coral;
 			this.panel5.Controls.Add(this.lblBankProcessAmout);
 			this.panel5.Controls.Add(this.lblVakif);
-			this.panel5.Location = new System.Drawing.Point(706, 61);
+			this.panel5.Location = new System.Drawing.Point(736, 61);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(225, 125);
+			this.panel5.Size = new System.Drawing.Size(234, 125);
 			this.panel5.TabIndex = 10;
 			// 
 			// lblBankProcessAmout
@@ -94,9 +110,9 @@
 			this.panel4.BackColor = System.Drawing.Color.DarkKhaki;
 			this.panel4.Controls.Add(this.lblBillAmout);
 			this.panel4.Controls.Add(this.lblBillTitle);
-			this.panel4.Location = new System.Drawing.Point(462, 61);
+			this.panel4.Location = new System.Drawing.Point(474, 61);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(225, 126);
+			this.panel4.Size = new System.Drawing.Size(235, 126);
 			this.panel4.TabIndex = 9;
 			// 
 			// lblBillAmout
@@ -128,7 +144,7 @@
 			this.panel3.Controls.Add(this.label2);
 			this.panel3.Location = new System.Drawing.Point(205, 61);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(225, 124);
+			this.panel3.Size = new System.Drawing.Size(235, 124);
 			this.panel3.TabIndex = 8;
 			// 
 			// lblTotalBalance
@@ -159,7 +175,7 @@
 			this.panel2.Controls.Add(this.label1);
 			this.panel2.Location = new System.Drawing.Point(2, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(930, 53);
+			this.panel2.Size = new System.Drawing.Size(968, 53);
 			this.panel2.TabIndex = 7;
 			// 
 			// label1
@@ -299,12 +315,91 @@
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// chart1
+			// 
+			chartArea1.Name = "ChartArea1";
+			this.chart1.ChartAreas.Add(chartArea1);
+			legend1.Name = "Legend1";
+			this.chart1.Legends.Add(legend1);
+			this.chart1.Location = new System.Drawing.Point(205, 246);
+			this.chart1.Name = "chart1";
+			series1.ChartArea = "ChartArea1";
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			this.chart1.Series.Add(series1);
+			this.chart1.Size = new System.Drawing.Size(360, 203);
+			this.chart1.TabIndex = 11;
+			this.chart1.Text = "chart1";
+			// 
+			// chart2
+			// 
+			chartArea2.Name = "ChartArea1";
+			this.chart2.ChartAreas.Add(chartArea2);
+			legend2.Name = "Legend1";
+			this.chart2.Legends.Add(legend2);
+			this.chart2.Location = new System.Drawing.Point(588, 246);
+			this.chart2.Name = "chart2";
+			series2.ChartArea = "ChartArea1";
+			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+			series2.Legend = "Legend1";
+			series2.Name = "Faturalar";
+			this.chart2.Series.Add(series2);
+			this.chart2.Size = new System.Drawing.Size(382, 203);
+			this.chart2.TabIndex = 12;
+			this.chart2.Text = "chart2";
+			// 
+			// flowLayoutPanel1
+			// 
+			this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+			this.flowLayoutPanel1.Controls.Add(this.label3);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(205, 191);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(343, 49);
+			this.flowLayoutPanel1.TabIndex = 13;
+			// 
+			// flowLayoutPanel2
+			// 
+			this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+			this.flowLayoutPanel2.Controls.Add(this.label4);
+			this.flowLayoutPanel2.Location = new System.Drawing.Point(588, 191);
+			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(382, 49);
+			this.flowLayoutPanel2.TabIndex = 14;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.label3.Location = new System.Drawing.Point(3, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(331, 32);
+			this.label3.TabIndex = 4;
+			this.label3.Text = "Bankalar ve banka hesaplarındaki para miktarlarına \r\naşağıdaki grafikten ulaşabil" +
+    "irsiniz\r\n";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.label4.Location = new System.Drawing.Point(3, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(302, 48);
+			this.label4.TabIndex = 5;
+			this.label4.Text = "Ödenen ve ödenmesi gerkeen fatura tutarlarına \r\naşağıdaki grafikten ulaşabilirsin" +
+    "iz\r\n\r\n";
+			// 
 			// FrmDashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MediumAquamarine;
 			this.ClientSize = new System.Drawing.Size(982, 518);
+			this.Controls.Add(this.flowLayoutPanel2);
+			this.Controls.Add(this.flowLayoutPanel1);
+			this.Controls.Add(this.chart2);
+			this.Controls.Add(this.chart1);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel3);
@@ -322,6 +417,12 @@
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+			this.flowLayoutPanel1.ResumeLayout(false);
+			this.flowLayoutPanel1.PerformLayout();
+			this.flowLayoutPanel2.ResumeLayout(false);
+			this.flowLayoutPanel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -348,6 +449,12 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+		private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
 	}
 }
 

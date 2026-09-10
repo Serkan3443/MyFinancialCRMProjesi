@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using MyFinancialCRMProjesi.Models;
 
 namespace MyFinancialCRMProjesi
@@ -28,6 +29,36 @@ namespace MyFinancialCRMProjesi
 
 			var lastBankProcessAmout = db.BankProcesses.OrderByDescending(x => x.BankProcessId).Take(1).Select(y => y.Amount).FirstOrDefault();
 			lblBankProcessAmout.Text = lastBankProcessAmout.ToString() + "₺";
+
+			//Grafik 1`in kodları
+			var bankData = db.Banks.Select(x =>new
+			{
+				x.BankTitle,
+				x.BankBalance
+			}).ToList();
+
+			chart1.Series.Clear();
+			var series = chart1.Series.Add("Series1");
+			foreach (var item in bankData)
+			{
+				series.Points.AddXY(item.BankTitle,item.BankBalance);
+			}
+
+			//Grafik 2 kodları
+
+			var billData = db.Bills.Select(x => new
+			{
+				x.BillTitle,
+				x.BillAmount
+			}).ToList();
+
+			chart2.Series.Clear();
+			var series2 = chart2.Series.Add("Faturalar");
+			series2.ChartType = SeriesChartType.Pie;
+			foreach (var item in billData)
+			{
+				series2.Points.AddXY(item.BillTitle, item.BillAmount);
+			}
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
